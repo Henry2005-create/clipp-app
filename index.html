@@ -1,5 +1,140 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:-apple-system,Helvetica,Arial,sans-serif;max-width:680px;margin:40px auto;padding:0 16px;line-height:1.6;color:#111;background:#fff}h1{font-size:1.6em}h2{font-size:1.15em;margin-top:1.6em}a{color:#e6195e}</style><title>Clipp App</title></head><body>
-<h1>Clipp App</h1>
-<p>Die Clipp App ist eine Statistik-App für Clipper auf TikTok. Sie zeigt dir, welche deiner Clips gut laufen, und vergleicht dich in einer monatlichen Rangliste mit anderen Clippern.</p>
-<p><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a href="datenschutz.html">Datenschutz</a></p>
-</body></html>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clipstar – Wer wird Clipstar des Monats?</title>
+<meta name="description" content="Die Rangliste für deutsche Clipper. Dein bester TikTok-Clip des Monats gewinnt Preisgeld und einen Shoutout auf unserem TikTok und Instagram.">
+<meta property="og:title" content="Clipstar – Wer wird Clipstar des Monats?">
+<meta property="og:description" content="Die Rangliste für deutsche Clipper. Preisgeld + Shoutout für den besten Clip des Monats.">
+<style>
+  :root{--bg:#07090A;--surface:#0E1210;--line:#1C221D;--text:#E9EEE6;--muted:#8E998A;--accent:#C8F560;--on:#07090A}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  header{padding:22px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:800;font-size:22px;letter-spacing:2px}
+  .logo span{color:var(--accent)}
+  .hero{padding:30px 0 10px;text-align:center}
+  .hero h1{font-size:clamp(30px,7vw,48px);line-height:1.12;margin:0 0 14px;font-weight:800}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:18px;margin:0 auto;max-width:560px}
+  .video{margin:28px 0;border:2px solid var(--accent);border-radius:14px;overflow:hidden;background:var(--surface);aspect-ratio:9/16;max-width:360px;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center}
+  .video video{width:100%;height:100%;object-fit:cover;display:block}
+  .video .soon{color:var(--muted);text-align:center;padding:20px}
+  .video .soon b{display:block;color:var(--text);font-size:20px;margin-bottom:6px}
+  .cta{text-align:center;margin:10px 0 40px}
+  .btn{display:inline-block;background:var(--accent);color:var(--on);border:0;border-radius:12px;font-weight:800;font-size:20px;padding:18px 34px;cursor:pointer}
+  .btn:disabled{opacity:.7;cursor:default}
+  .count{color:var(--muted);margin-top:12px;font-size:15px}
+  form{display:none;margin:18px auto 0;max-width:420px;gap:8px}
+  form.show{display:flex}
+  input{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:14px;font-size:16px}
+  form button{background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:10px;padding:0 16px;font-weight:700;font-size:15px;cursor:pointer}
+  .prize{background:var(--accent);color:var(--on);border-radius:14px;padding:22px;margin:0 0 34px}
+  .prize .big{font-size:48px;font-weight:900;line-height:1.1;margin-top:4px;white-space:nowrap}
+  .prize ul{margin:12px 0 0;padding-left:18px}
+  h2{font-size:24px;margin:0 0 14px}
+  .steps,.features{display:grid;gap:12px;margin-bottom:36px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .card b{display:block;font-size:17px;margin-bottom:4px}
+  .card span{color:var(--muted)}
+  .num{color:var(--accent);font-weight:900;font-size:22px;margin-right:6px}
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:14px;text-align:center}
+  footer a{color:var(--muted);margin:0 8px}
+  @media(min-width:640px){.features{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="logo">CLIP <span>✦ STAR</span></div></header>
+
+  <section class="hero">
+    <h1>Wer wird <em>Clipstar</em> des Monats?</h1>
+    <p><strong style="color:var(--accent)">Jeden Monat Preisgeld:</strong> Dein bester TikTok-Clip gewinnt, und wir pushen deinen Account auf unserem TikTok und Insta. Die Rangliste für deutsche Clipper.</p>
+  </section>
+
+  <!-- Erklär-Video: Datei "clipstar-tutorial.mp4" in diesen Ordner legen, dann erscheint es hier -->
+  <div class="video" id="video">
+    <video src="clipstar-tutorial.mp4" controls playsinline preload="metadata" onerror="this.parentNode.innerHTML='&lt;div class=&quot;soon&quot;&gt;&lt;b&gt;Das Erklär-Video kommt gleich&lt;/b&gt;In 60 Sekunden siehst du hier die ganze App.&lt;/div&gt;'"></video>
+  </div>
+
+  <div class="cta">
+    <button class="btn" id="want">Würde ich runterladen</button>
+    <div class="count" id="count">Clipstar kommt bald in den App Store.</div>
+    <form id="mail">
+      <input type="email" id="email" placeholder="Deine E-Mail für den Start" autocomplete="email">
+      <button type="submit">Bescheid geben</button>
+    </form>
+  </div>
+
+  <div class="prize">
+    <div>Preisgeld für Platz 1, jeden Monat</div>
+    <div class="big">100 € (mehr Nutzer, höheres Preisgeld)</div>
+    <ul>
+      <li>für den Clip mit den meisten Aufrufen, und nochmal Preisgeld für die meisten Likes</li>
+      <li>Repost deines Clips auf dem Clipstar-TikTok und -Instagram</li>
+      <li>Shoutout mit deinem Account-Namen und Link zu deinem Profil. Neue Follower für dich.</li>
+    </ul>
+  </div>
+
+  <h2>So funktioniert's</h2>
+  <div class="steps">
+    <div class="card"><span class="num">1</span><b style="display:inline">Mit TikTok anmelden</b><br><span>Wir lesen nur deine öffentlichen Clips und Zahlen. Dein Passwort sehen wir nie.</span></div>
+    <div class="card"><span class="num">2</span><b style="display:inline">Bei der Rangliste mitmachen</b><br><span>Kostenlos. Es zählt dein bester einzelner Clip des Monats.</span></div>
+    <div class="card"><span class="num">3</span><b style="display:inline">Clipstar des Monats werden</b><br><span>Am 7. wird ausgewertet. Platz 1 gewinnt das Preisgeld und den Shoutout.</span></div>
+  </div>
+
+  <h2>Was Clipstar noch kann</h2>
+  <div class="features">
+    <div class="card"><b>Live-Rangliste</b><span>Sieh, wo du stehst, und wer gerade auf Platz 1 ist. Stündlich aktuell.</span></div>
+    <div class="card"><b>Bilanz</b><span>Welche Clips laufen, wann du posten solltest und welche Länge am besten zieht.</span></div>
+    <div class="card"><b>Meistgeclippte Streamer</b><span>Wer auf Twitch gerade am meisten geclippt wird, jede Woche neu.</span></div>
+    <div class="card"><b>Coach</b><span>Frag alles rund ums Clippen oder schick einen Screenshot deiner TikTok-Statistik.</span></div>
+  </div>
+</div>
+
+<footer>
+  <a href="datenschutz.html">Datenschutz</a>·<a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>·<a href="impressum.html">Impressum</a>
+  <div style="margin-top:8px">© 2026 Clipstar</div>
+</footer>
+
+<script>
+  // Preis-Zeile immer in einer Zeile: Schrift so weit verkleinern, bis sie in den Kasten passt
+  function fitPrize() {
+    const el = document.querySelector('.prize .big');
+    if (!el) return;
+    let size = 48;
+    el.style.fontSize = size + 'px';
+    while (el.scrollWidth > el.clientWidth && size > 12) { size -= 1; el.style.fontSize = size + 'px'; }
+  }
+  fitPrize();
+  window.addEventListener('resize', fitPrize);
+
+  const API = 'https://ngqcwsgkdcegdslhveko.supabase.co/functions/v1/tiktok-auth/interest';
+  const btn = document.getElementById('want');
+  const count = document.getElementById('count');
+  const form = document.getElementById('mail');
+  async function send(email) {
+    const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(email ? { email } : {}) });
+    return r.json();
+  }
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    btn.textContent = 'Danke!';
+    try {
+      const d = await send();
+      count.textContent = d.count > 1 ? `Du und ${d.count - 1} andere warten schon auf Clipstar.` : 'Du bist der Erste, der auf Clipstar wartet.';
+    } catch { count.textContent = 'Danke! Clipstar kommt bald.'; }
+    form.classList.add('show');
+  });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    if (!email) return;
+    try { await send(email); } catch {}
+    form.innerHTML = '<div style="color:var(--accent);margin:auto">Eingetragen. Wir sagen dir Bescheid, sobald Clipstar da ist.</div>';
+  });
+</script>
+</body>
+</html>
