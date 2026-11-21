@@ -65,13 +65,14 @@
   </div>
 
   <div class="cta">
-    <button class="btn" id="want">Würde ich runterladen</button>
-    <div class="count" id="count">Clipstar kommt bald in den App Store.</div>
+    <a class="btn" href="app/" style="text-decoration:none">Jetzt im Browser mitmachen →</a>
+    <div class="count">Die iPhone-App kommt bald in den App Store.</div>
+    <button class="web" id="want" style="background:transparent;cursor:pointer;font-family:inherit">Sag mir Bescheid, wenn die iPhone-App da ist</button>
+    <div class="count" id="count"></div>
     <form id="mail">
-      <input type="email" id="email" placeholder="Deine E-Mail für den Start" autocomplete="email">
+      <input type="email" id="email" placeholder="Deine E-Mail" autocomplete="email">
       <button type="submit">Bescheid geben</button>
     </form>
-    <a class="web" href="app/">Im Browser ausprobieren →</a>
   </div>
 
   <div class="prize">
@@ -130,8 +131,8 @@
     btn.textContent = 'Danke!';
     try {
       const d = await send();
-      count.textContent = d.count > 1 ? `Du und ${d.count - 1} andere warten schon auf Clipstar.` : 'Du bist der Erste, der auf Clipstar wartet.';
-    } catch { count.textContent = 'Danke! Clipstar kommt bald.'; }
+      count.textContent = d.count > 1 ? `Du und ${d.count - 1} andere warten schon auf die iPhone-App.` : 'Du bist der Erste, der auf die iPhone-App wartet.';
+    } catch { count.textContent = 'Danke! Wir sagen dir Bescheid.'; }
     form.classList.add('show');
   });
   form.addEventListener('submit', async (e) => {
@@ -139,7 +140,7 @@
     const email = document.getElementById('email').value.trim();
     if (!email) return;
     try { await send(email); } catch {}
-    form.innerHTML = '<div style="color:var(--accent);margin:auto">Eingetragen. Wir sagen dir Bescheid, sobald Clipstar da ist.</div>';
+    form.innerHTML = '<div style="color:var(--accent);margin:auto">Eingetragen. Wir sagen dir Bescheid, sobald die iPhone-App da ist.</div>';
   });
 </script>
 </body>
